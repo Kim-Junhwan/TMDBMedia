@@ -16,6 +16,7 @@
 		C72F29CD2A878F5B009BE133 /* OverViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72F29CB2A878F5B009BE133 /* OverViewTableViewCell.xib */; };
 		C72F29D12A87E920009BE133 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F29CF2A87E920009BE133 /* CastTableViewCell.swift */; };
 		C72F29D22A87E920009BE133 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72F29D02A87E920009BE133 /* CastTableViewCell.xib */; };
+		C72F29D72A8877F0009BE133 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F29D62A8877F0009BE133 /* CacheManager.swift */; };
 		C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */; };
 		C77BF5B02A8669CE0077DFB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */; };
 		C77BF5B52A8669CE0077DFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77BF5B32A8669CE0077DFB7 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		C72F29CB2A878F5B009BE133 /* OverViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverViewTableViewCell.xib; sourceTree = "<group>"; };
 		C72F29CF2A87E920009BE133 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		C72F29D02A87E920009BE133 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
+		C72F29D62A8877F0009BE133 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		C77BF5AA2A8669CE0077DFB7 /* TMDBMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,31 @@
 			path = CasrCell;
 			sourceTree = "<group>";
 		};
+		C72F29D42A88766E009BE133 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C72F29BD2A8733E1009BE133 /* UIImageView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C72F29D52A8877DC009BE133 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C72F29D62A8877F0009BE133 /* CacheManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C72F29D82A887C6B009BE133 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */,
+				C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		C77BF5A12A8669CE0077DFB7 = {
 			isa = PBXGroup;
 			children = (
@@ -117,13 +144,13 @@
 		C77BF5AC2A8669CE0077DFB7 /* TMDBMedia */ = {
 			isa = PBXGroup;
 			children = (
+				C72F29D82A887C6B009BE133 /* App */,
+				C72F29D52A8877DC009BE133 /* Manager */,
+				C72F29D42A88766E009BE133 /* Extension */,
 				C72F29C02A875EBC009BE133 /* Model */,
 				C72F29BF2A875EB3009BE133 /* Detail */,
 				C77BF5C32A8674720077DFB7 /* TrendList */,
-				C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */,
-				C72F29BD2A8733E1009BE133 /* UIImageView+.swift */,
 				C77BF5C92A8675C10077DFB7 /* APIKey.swift */,
-				C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */,
 				C77BF5B32A8669CE0077DFB7 /* Main.storyboard */,
 				C77BF5B62A8669CF0077DFB7 /* Assets.xcassets */,
 				C77BF5B82A8669CF0077DFB7 /* LaunchScreen.storyboard */,
@@ -234,6 +261,7 @@
 				C77BF5C22A8673F10077DFB7 /* TrendListViewController.swift in Sources */,
 				C72F29C42A8771FE009BE133 /* DetailMovie.swift in Sources */,
 				C72F29BE2A8733E1009BE133 /* UIImageView+.swift in Sources */,
+				C72F29D72A8877F0009BE133 /* CacheManager.swift in Sources */,
 				C72F29BC2A872856009BE133 /* Movie.swift in Sources */,
 				C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */,
 				C72F29D12A87E920009BE133 /* CastTableViewCell.swift in Sources */,

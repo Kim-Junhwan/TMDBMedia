@@ -112,6 +112,21 @@
                   endingLineNumber = "82"
                   offsetFromSymbolStart = "124">
                </Location>
+               <Location
+                  uuid = "210F2EBF-1A06-44BD-AB2F-FF6E67B0C660 - 9ac7ae0ccaedc64a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "124">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,6 +173,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "15EA87BB-CA6A-4E56-958A-88C624F547E7 - 9ac7ae0ccaedc64a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
                   offsetFromSymbolStart = "124">
                </Location>
             </Locations>
@@ -208,6 +238,21 @@
                   endingLineNumber = "85"
                   offsetFromSymbolStart = "220">
                </Location>
+               <Location
+                  uuid = "AC3B3F39-1603-4C04-8BEA-EED2B6309EC9 - 9ac7ae0ccaedc9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "220">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -254,6 +299,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
                   endingLineNumber = "83"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "552C96B6-EC77-4D71-900B-EDA42B3FBF34 - 9ac7ae0ccaedc66b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
                   offsetFromSymbolStart = "196">
                </Location>
             </Locations>
@@ -682,6 +742,21 @@
                   endingLineNumber = "34"
                   offsetFromSymbolStart = "592">
                </Location>
+               <Location
+                  uuid = "00AB481D-9FC1-4B8F-8B87-6617A154E97C - a71e77a29cae337c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in TMDBMedia.DetailViewController.getDetailMovie() -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "592">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -728,6 +803,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
+                  offsetFromSymbolStart = "468">
+               </Location>
+               <Location
+                  uuid = "E7399A50-6395-4E6E-901A-6ABF1CE4B6C2 - a71e77a29cae339f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in TMDBMedia.DetailViewController.getDetailMovie() -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
                   offsetFromSymbolStart = "468">
                </Location>
             </Locations>
@@ -778,6 +868,36 @@
                   endingLineNumber = "29"
                   offsetFromSymbolStart = "260">
                </Location>
+               <Location
+                  uuid = "5356609D-05FD-490B-96C6-00C322616E0F - 504b9aca5700c801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.getDetailMovie() -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "512">
+               </Location>
+               <Location
+                  uuid = "5356609D-05FD-490B-96C6-00C322616E0F - a71e77a29cae3223"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in TMDBMedia.DetailViewController.getDetailMovie() -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "260">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -794,6 +914,166 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "getDetailMovie()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "91018E82-5604-4FAD-BD3B-BA5453FFCF23 - 504b9aca5700ca11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.getDetailMovie() -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "91018E82-5604-4FAD-BD3B-BA5453FFCF23 - 504b9aca5700c8e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TMDBMedia.DetailViewController.getDetailMovie() -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Detail/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DCA5374-37D9-480B-B2C6-FFD359205EE7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDBMedia/Extension/UIImageView+.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "getImageFromUrl(posterPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60460F95-B61F-4ABA-9DDD-A3675FB4AFCE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDBMedia/Extension/UIImageView+.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "getImageFromUrl(posterPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "085D84FC-EF3E-4F10-B001-589A0FAAF0D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDBMedia/Extension/UIImageView+.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "getImageFromUrl(posterPath:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "085D84FC-EF3E-4F10-B001-589A0FAAF0D9 - 1efbd8f726909d6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIImageView.getImageFromUrl(posterPath: Swift.String) -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Extension/UIImageView+.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  uuid = "085D84FC-EF3E-4F10-B001-589A0FAAF0D9 - 5925ae0e36ef77d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in __C.UIImageView.getImageFromUrl(posterPath: Swift.String) -&gt; ()"
+                  moduleName = "TMDBMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junhwankim/Desktop/Sesac/TMDBMedia/TMDBMedia/Extension/UIImageView+.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A83D757C-6CAE-407D-873C-11F44872C3D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDBMedia/Extension/UIImageView+.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getImageFromUrl(posterPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8AE15E60-3541-4E20-BE52-E014309CF85D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDBMedia/Extension/UIImageView+.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getImageFromUrl(posterPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5EB6E14-D316-4B78-B727-13C22DC9AC79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TMDBMedia/Extension/UIImageView+.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getImageFromUrl(posterPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
