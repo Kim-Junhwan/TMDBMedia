@@ -18,6 +18,7 @@ class OverViewTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         overViewLabelHeightAnchor.isActive = true
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
