@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct CacheManager {
+class CacheManager {
     
     private let cache = NSCache<NSString, UIImage>()
     
