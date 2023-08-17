@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="TVSeriesHeaderUICollectionReusableView" customModule="TMDBMedia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Fa-Bd-nus">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sls-Iw-RzK">
+                    <rect key="frame" x="30.000000000000007" y="43" width="76.666666666666686" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sls-Iw-RzK" secondAttribute="trailing" id="6PO-dL-adK"/>
+                <constraint firstItem="8Fa-Bd-nus" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="6WO-OL-6Ye"/>
+                <constraint firstItem="8Fa-Bd-nus" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="GSu-J5-5y9"/>
+                <constraint firstItem="sls-Iw-RzK" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="ffo-yp-cy5"/>
+                <constraint firstAttribute="trailing" secondItem="8Fa-Bd-nus" secondAttribute="trailing" id="k37-T2-CJr"/>
+                <constraint firstItem="sls-Iw-RzK" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="30" id="uPj-u3-4lh"/>
+                <constraint firstAttribute="bottom" secondItem="8Fa-Bd-nus" secondAttribute="bottom" id="veH-bN-V8s"/>
+            </constraints>
+            <connections>
+                <outlet property="backdropImage" destination="8Fa-Bd-nus" id="9aa-WH-vao"/>
+                <outlet property="nameLabel" destination="sls-Iw-RzK" id="4hr-nc-EfT"/>
+            </connections>
+            <point key="canvasLocation" x="59.541984732824424" y="14.084507042253522"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
