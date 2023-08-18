@@ -35,13 +35,30 @@ struct TVSeriesSeason: Decodable {
 
 struct Season: Decodable {
     let name: String
-    let posterPath: String
+    let posterPath: String?
     let seasonNumber: Int
+    let id: Int
     
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case posterPath = "poster_path"
         case seasonNumber = "season_number"
     }
+}
+
+struct EpisodeList: Decodable {
+    let episodes: [SeasonEpisode]
+}
+
+struct SeasonEpisode: Decodable {
+    let id: Int
+    let episodeNum: Int
+    let stillPath: String
     
+    enum CodingKeys: String, CodingKey {
+        case id
+        case episodeNum = "episode_number"
+        case stillPath = "still_path"
+    }
 }
