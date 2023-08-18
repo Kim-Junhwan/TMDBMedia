@@ -48,20 +48,10 @@ class TrendListViewController: UIViewController {
     }
     
     func fetchMovieList() {
-        AF.request("https://api.themoviedb.org/3/trending/movie/day?api_key=\(APIKey.tmdsAPIKey)").response { response in
-            switch response.result {
-            case .success(let data):
-                guard let data else { return }
-                do {
-                    let resultData = try JSONDecoder().decode(MovieList.self, from: data)
-                    self.movieList = resultData
-                } catch {
-                    print(error)
-                }
-                self.collectionView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
+        AF.request("https://api.themoviedb.org/3/trending/movie/day?api_key=\(APIKey.tmdsAPIKey)&language=ko-KR").responseDecodable(of: MovieList.self) { response in
+            guard let fetchList = response.value else { return }
+                    self.movieList = fetchList
+            self.collectionView.reloadData()
         }
     }
     
