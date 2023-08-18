@@ -7,19 +7,25 @@
 
 import UIKit
 
-class TVSeriesHeaderUICollectionReusableView: UICollectionReusableView {
+class TVSeriesHeaderUICollectionReusableView: UICollectionReusableView, ReusableIdentifier {
     
     @IBOutlet weak var backdropImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        nameLabel.adjustsFontSizeToFitWidth = true
     }
     
     func configureHeaderView(tvseries: TVSeries) {
         nameLabel.text = tvseries.name
         backdropImage.getImageFromUrl(posterPath: tvseries.backdropPath)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        backdropImage.image = nil
     }
     
 }
