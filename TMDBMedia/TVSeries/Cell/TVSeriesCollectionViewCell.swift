@@ -19,9 +19,22 @@ class TVSeriesCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: TVSeriesDetailSeasonCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: TVSeriesDetailSeasonCollectionViewCell.identifier)
+        
+    }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        collectionView.layoutIfNeeded()
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 10.0
-        flowLayout.itemSize = CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.itemSize = CGSize(width: collectionView.frame.height * 1.5 , height: collectionView.frame.height)
+        
         flowLayout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = flowLayout
     }
@@ -37,7 +50,7 @@ class TVSeriesCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        print("reuse")
+        episodeList = EpisodeList(episodes: [])
     }
 }
 
