@@ -62,7 +62,6 @@ class DetailViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: OverViewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OverViewTableViewCell.identifier)
         tableView.register(UINib(nibName: CastTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CastTableViewCell.identifier)
-        
     }
     
 }

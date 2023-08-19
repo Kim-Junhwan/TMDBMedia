@@ -28,7 +28,7 @@ class TVSeriesCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
     
     func configureCell(season: Season, seasonId: Int) {
         seasonNameLabel.text = season.name
-        AF.request("https://api.themoviedb.org/3/tv/\(seasonId)/season/\(season.seasonNumber)?api_key=8b221a8ca88f8a965a6496655ac80a90").validate().responseDecodable(of: EpisodeList.self) { response in
+        AF.request("https://api.themoviedb.org/3/tv/\(seasonId)/season/\(season.seasonNumber)?api_key=\(APIKey.tmdsAPIKey)").validate().responseDecodable(of: EpisodeList.self) { response in
             guard let episodes = response.value else { return }
             self.episodeList = episodes
             self.collectionView.reloadData()

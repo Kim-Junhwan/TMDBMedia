@@ -19,11 +19,11 @@ class TVSeriesViewController: UIViewController {
         super.viewDidLoad()
         setCollectionView()
         
-        AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=8b221a8ca88f8a965a6496655ac80a90", method: .get).validate().responseDecodable(of: TVSeriesList.self) { [weak self] result in
+        AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKey)", method: .get).validate().responseDecodable(of: TVSeriesList.self) { [weak self] result in
             guard let list = result.value else { return }
             self?.tvseriesList = list
             for tvSeries in list.results {
-                AF.request("https://api.themoviedb.org/3/tv/\(tvSeries.id)?api_key=8b221a8ca88f8a965a6496655ac80a90").validate().responseDecodable(of: TVSeriesSeason.self) { response in
+                AF.request("https://api.themoviedb.org/3/tv/\(tvSeries.id)?api_key=\(APIKey.tmdsAPIKey)").validate().responseDecodable(of: TVSeriesSeason.self) { response in
                     guard let fetchTvSeriesSeason = response.value else { return }
                     self?.sectionTVSeriesList[tvSeries.id] = fetchTvSeriesSeason
                     if self?.sectionTVSeriesList.count == list.results.count {
