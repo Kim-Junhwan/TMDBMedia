@@ -18,19 +18,28 @@ class TVSeriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
+        title = "TVSeries"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor:UIColor.white]
         
+        let group = DispatchGroup()
+        group.enter()
         AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKey)", method: .get).validate().responseDecodable(of: TVSeriesList.self) { [weak self] result in
             guard let list = result.value else { return }
             self?.tvseriesList = list
             for tvSeries in list.results {
-                AF.request("https://api.themoviedb.org/3/tv/\(tvSeries.id)?api_key=\(APIKey.tmdsAPIKey)").validate().responseDecodable(of: TVSeriesSeason.self) { response in
-                    guard let fetchTvSeriesSeason = response.value else { return }
-                    self?.sectionTVSeriesList[tvSeries.id] = fetchTvSeriesSeason
-                    if self?.sectionTVSeriesList.count == list.results.count {
-                        self?.collectionView.reloadData()
+                DispatchQueue.global().async {
+                    group.enter()
+                    AF.request("https://api.themoviedb.org/3/tv/\(tvSeries.id)?api_key=\(APIKey.tmdsAPIKey)").validate().responseDecodable(of: TVSeriesSeason.self) { response in
+                        guard let fetchTvSeriesSeason = response.value else { return }
+                        self?.sectionTVSeriesList[tvSeries.id] = fetchTvSeriesSeason
+                        group.leave()
                     }
                 }
             }
+            group.leave()
+        }
+        group.notify(queue: .main) {
+            self.collectionView.reloadData()
         }
     }
     
