@@ -6,7 +6,7 @@
 
 ## 새싹 22차 과제
 
-![Simulator Screen Recording - iPhone 14 Pro - 2023-08-19 at 10 07 09](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/996975bc-bb57-4584-be1f-03ce72c7b732)
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-19 at 15 33 34](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/f2715f2d-e048-451e-a577-a2ac08a77672)
 
 - TMDB TV시리즈 리스트 API, 시즌 API와 시즌별 에피소드를 제공해주는 API를 통한 TV 시리즈 시즌별 에피소드를 제공하는 기능 추가
 - CollectionView의 각 섹션은 TV시리즈를 담당, 각 셀은 해당 TV 시리즈의 시즌을 표현
