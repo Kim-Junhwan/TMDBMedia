@@ -29,7 +29,7 @@ class TVSeriesViewController: UIViewController {
             for tvSeries in list.results {
                 DispatchQueue.global().async {
                     group.enter()
-                    AF.request("https://api.themoviedb.org/3/tv/\(tvSeries.id)?api_key=\(APIKey.tmdsAPIKey)").validate().responseDecodable(of: TVSeriesSeason.self) { response in
+                    AF.request("https://api.themoviedb.org/3/tv/\(tvSeries.id)?api_key=\(APIKey.tmdsAPIKey)&language=ko-KR").validate().responseDecodable(of: TVSeriesSeason.self) { response in
                         guard let fetchTvSeriesSeason = response.value else { return }
                         self?.sectionTVSeriesList[tvSeries.id] = fetchTvSeriesSeason
                         group.leave()
