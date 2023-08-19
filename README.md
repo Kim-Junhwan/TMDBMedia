@@ -1,10 +1,10 @@
 # TMDBMedia
 
-## 새싹 20차 과제
+## 새싹 20회차 과제
 
 ![Simulator_Screen_Recording_-_iPhone_14_Pro_-_2023-08-14_at_08_55_23_AdobeExpress (1)](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/527b89a7-c885-4062-be81-b4d0efc91dd1)
 
-## 새싹 22차 과제
+## 새싹 22회차 과제
 
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-08-19 at 15 33 34](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/f2715f2d-e048-451e-a577-a2ac08a77672)
 
@@ -36,3 +36,6 @@ AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKe
         }
 ```
 
+## 새싹 24회차 과제
+
+- 로컬 알람 구현. 매일 오전 8시 30분에 다마고치에게 먹이를 주라는 알림이 띄우도록 구현
