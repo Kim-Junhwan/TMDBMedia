@@ -39,3 +39,18 @@ AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKe
 ## 새싹 24회차 과제
 
 - 로컬 알람 구현. 매일 오전 8시 30분에 다마고치에게 먹이를 주라는 알림이 띄우도록 구현
+
+## 새싹 27회차 과제
+
+
+- 위치 버튼 클릭시 현재 위치로 이동
+
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-23 at 21 01 23](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/763ae42f-8a6a-4583-8e33-aee9d6add31d)
+
+- 권한 없을 경우 위치버튼 클릭 시 설정 이동 Alert 추가
+
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-23 at 21 03 39](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/d1c4ab63-e6b7-41ac-baed-5ced9e652448)
+
+- 주변 영화관 지도상에 어노테이션으로 표시 및 필터링
+  
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-23 at 21 03 10](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/6d4e745e-ac4d-4e0b-a7a1-8b2735d1f9da)
