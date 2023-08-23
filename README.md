@@ -1,12 +1,12 @@
 # TMDBMedia
 
-## 새싹 20차 과제
+## 새싹 20회차 과제
 
 ![Simulator_Screen_Recording_-_iPhone_14_Pro_-_2023-08-14_at_08_55_23_AdobeExpress (1)](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/527b89a7-c885-4062-be81-b4d0efc91dd1)
 
-## 새싹 22차 과제
+## 새싹 22회차 과제
 
-![Simulator Screen Recording - iPhone 14 Pro - 2023-08-19 at 10 07 09](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/996975bc-bb57-4584-be1f-03ce72c7b732)
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-19 at 15 33 34](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/f2715f2d-e048-451e-a577-a2ac08a77672)
 
 - TMDB TV시리즈 리스트 API, 시즌 API와 시즌별 에피소드를 제공해주는 API를 통한 TV 시리즈 시즌별 에피소드를 제공하는 기능 추가
 - CollectionView의 각 섹션은 TV시리즈를 담당, 각 셀은 해당 TV 시리즈의 시즌을 표현
@@ -36,3 +36,6 @@ AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKe
         }
 ```
 
+## 새싹 24회차 과제
+
+- 로컬 알람 구현. 매일 오전 8시 30분에 다마고치에게 먹이를 주라는 알림이 띄우도록 구현
