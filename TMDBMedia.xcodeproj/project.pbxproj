@@ -26,6 +26,9 @@
 		C72F2A1B2A8E48C1009BE133 /* TVSeriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72F2A192A8E48C1009BE133 /* TVSeriesCollectionViewCell.xib */; };
 		C72F2A1E2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A1C2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.swift */; };
 		C72F2A1F2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72F2A1D2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.xib */; };
+		C72F2A762A95D802009BE133 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A752A95D802009BE133 /* MapViewController.swift */; };
+		C72F2A792A95D90B009BE133 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C72F2A782A95D90B009BE133 /* SnapKit */; };
+		C72F2A7B2A9621C9009BE133 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A7A2A9621C9009BE133 /* Theater.swift */; };
 		C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */; };
 		C77BF5B02A8669CE0077DFB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */; };
 		C77BF5B52A8669CE0077DFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77BF5B32A8669CE0077DFB7 /* Main.storyboard */; };
@@ -56,6 +59,8 @@
 		C72F2A192A8E48C1009BE133 /* TVSeriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVSeriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C72F2A1C2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesDetailSeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		C72F2A1D2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVSeriesDetailSeasonCollectionViewCell.xib; sourceTree = "<group>"; };
+		C72F2A752A95D802009BE133 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C72F2A7A2A9621C9009BE133 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		C77BF5AA2A8669CE0077DFB7 /* TMDBMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C72F29BA2A872632009BE133 /* Alamofire in Frameworks */,
+				C72F2A792A95D90B009BE133 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +180,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C72F2A742A95D7E7009BE133 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C72F2A752A95D802009BE133 /* MapViewController.swift */,
+				C72F2A7A2A9621C9009BE133 /* Theater.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		C77BF5A12A8669CE0077DFB7 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +208,7 @@
 		C77BF5AC2A8669CE0077DFB7 /* TMDBMedia */ = {
 			isa = PBXGroup;
 			children = (
+				C72F2A742A95D7E7009BE133 /* Map */,
 				C72F29D82A887C6B009BE133 /* App */,
 				C72F29D52A8877DC009BE133 /* Manager */,
 				C72F29D42A88766E009BE133 /* Extension */,
@@ -246,6 +262,7 @@
 			name = TMDBMedia;
 			packageProductDependencies = (
 				C72F29B92A872632009BE133 /* Alamofire */,
+				C72F2A782A95D90B009BE133 /* SnapKit */,
 			);
 			productName = TMDBMedia;
 			productReference = C77BF5AA2A8669CE0077DFB7 /* TMDBMedia.app */;
@@ -277,6 +294,7 @@
 			mainGroup = C77BF5A12A8669CE0077DFB7;
 			packageReferences = (
 				C72F29B82A872632009BE133 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C72F2A772A95D90B009BE133 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = C77BF5AB2A8669CE0077DFB7 /* Products */;
 			projectDirPath = "";
@@ -318,7 +336,9 @@
 				C72F29BE2A8733E1009BE133 /* UIImageView+.swift in Sources */,
 				C72F2A1A2A8E48C1009BE133 /* TVSeriesCollectionViewCell.swift in Sources */,
 				C72F2A0C2A8E3A09009BE133 /* TVSeriesSeason.swift in Sources */,
+				C72F2A762A95D802009BE133 /* MapViewController.swift in Sources */,
 				C72F29D72A8877F0009BE133 /* CacheManager.swift in Sources */,
+				C72F2A7B2A9621C9009BE133 /* Theater.swift in Sources */,
 				C72F29BC2A872856009BE133 /* Movie.swift in Sources */,
 				C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */,
 				C72F2A162A8E46EE009BE133 /* ReusableIdentifier.swift in Sources */,
@@ -560,6 +580,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		C72F2A772A95D90B009BE133 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -567,6 +595,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C72F29B82A872632009BE133 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		C72F2A782A95D90B009BE133 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C72F2A772A95D90B009BE133 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

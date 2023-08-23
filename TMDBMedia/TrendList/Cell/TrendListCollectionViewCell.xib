@@ -79,12 +79,23 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6fw-ru-znp">
                                                         <rect key="frame" x="8" y="8" width="270" height="45.666666666666664"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-U6-yVh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="63" height="20.333333333333332"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-I2-JYS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="20.333333333333332"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈㅂㅈ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-U6-yVh">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="20.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="ㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KC-hQ-szV">
+                                                                        <rect key="frame" x="196.66666666666666" y="0.0" width="73.333333333333343" height="20.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wHW-uT-Hnn">
                                                                 <rect key="frame" x="0.0" y="25.333333333333314" width="71" height="20.333333333333329"/>
                                                                 <subviews>
@@ -103,6 +114,9 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nav-I2-JYS" secondAttribute="trailing" id="6BR-Sr-L1j"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2h-O9-Zba">
                                                         <rect key="frame" x="8" y="69.333333333333314" width="270" height="1"/>
@@ -159,6 +173,7 @@
                 <outlet property="contentCellBackgroundView" destination="osf-xX-Ce6" id="BA0-BO-FGx"/>
                 <outlet property="contentCellView" destination="TLJ-3n-v31" id="I3L-RA-t3Z"/>
                 <outlet property="languageLabel" destination="Wnr-Ue-swQ" id="E5N-Xb-ijA"/>
+                <outlet property="originNameLabel" destination="4KC-hQ-szV" id="grt-5t-mKz"/>
                 <outlet property="ratingLabel" destination="wAV-L2-OcR" id="IXm-Yi-iMP"/>
                 <outlet property="releaseDateLabel" destination="9Dn-jH-fNL" id="FMc-vC-jOg"/>
                 <outlet property="thumbnailImageView" destination="Prf-F7-JZ2" id="Jaz-lf-oX0"/>

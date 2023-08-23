@@ -16,6 +16,8 @@ class TrendListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    
+    @IBOutlet weak var originNameLabel: UILabel!
     @IBOutlet weak var contentCellBackgroundView: UIView!
     
     @IBOutlet weak var contentCellView: UIStackView!
@@ -38,6 +40,7 @@ class TrendListCollectionViewCell: UICollectionViewCell {
         titleLabel.text = movie.title
         languageLabel.text = movie.original_language
         thumbnailImageView.getImageFromUrl(posterPath: movie.poster_path)
+        originNameLabel.text = movie.original_title
     }
 
 }
