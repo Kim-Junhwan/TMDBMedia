@@ -54,3 +54,10 @@ AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKe
 - 주변 영화관 지도상에 어노테이션으로 표시 및 필터링
   
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-08-23 at 21 03 10](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/6d4e745e-ac4d-4e0b-a7a1-8b2735d1f9da)
+
+## 새싹 29회차 과제
+
+- UIPageViewController를 이용한 앱 처음 실행시 인트로 화면
+  
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-27 at 12 00 26](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/62df6b10-fe22-41a0-af6b-5e900de5258c)
+
