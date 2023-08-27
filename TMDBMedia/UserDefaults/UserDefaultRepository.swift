@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct UserDefaultRepository {
+    
+    static var isLaunched: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: "isLaunched")
+        }
+        
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "isLaunched")
+        }
+    }
+}

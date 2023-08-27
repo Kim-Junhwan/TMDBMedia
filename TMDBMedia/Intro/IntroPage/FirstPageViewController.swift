@@ -8,22 +8,42 @@
 import UIKit
 
 class FirstPageViewController: UIViewController {
+    
+    let IntroCommentLabel: UILabel = {
+       let label = UILabel()
+        label.textColor = .red
+        label.text = "환영합니다!"
+        label.font = UIFont.boldSystemFont(ofSize: 40)
+        return label
+    }()
+    
+    let background: UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "보노보노")
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
+        setView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UserDefaultRepository.isLaunched = true
     }
-    */
+    
+    func setView() {
+        view.addSubview(background)
+        view.addSubview(IntroCommentLabel)
+        background.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        IntroCommentLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
 
 }

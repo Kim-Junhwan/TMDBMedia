@@ -29,6 +29,10 @@
 		C72F2A762A95D802009BE133 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A752A95D802009BE133 /* MapViewController.swift */; };
 		C72F2A792A95D90B009BE133 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C72F2A782A95D90B009BE133 /* SnapKit */; };
 		C72F2A7B2A9621C9009BE133 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A7A2A9621C9009BE133 /* Theater.swift */; };
+		C72F2A992A98F52B009BE133 /* IntroPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A982A98F52B009BE133 /* IntroPageController.swift */; };
+		C72F2A9C2A999E03009BE133 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A9B2A999E03009BE133 /* FirstPageViewController.swift */; };
+		C72F2A9E2A999E0D009BE133 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2A9D2A999E0D009BE133 /* SecondPageViewController.swift */; };
+		C72F2AA12A99DF3A009BE133 /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2AA02A99DF3A009BE133 /* UserDefaultRepository.swift */; };
 		C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */; };
 		C77BF5B02A8669CE0077DFB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */; };
 		C77BF5B52A8669CE0077DFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77BF5B32A8669CE0077DFB7 /* Main.storyboard */; };
@@ -61,6 +65,10 @@
 		C72F2A1D2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVSeriesDetailSeasonCollectionViewCell.xib; sourceTree = "<group>"; };
 		C72F2A752A95D802009BE133 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C72F2A7A2A9621C9009BE133 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
+		C72F2A982A98F52B009BE133 /* IntroPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageController.swift; sourceTree = "<group>"; };
+		C72F2A9B2A999E03009BE133 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		C72F2A9D2A999E0D009BE133 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
+		C72F2AA02A99DF3A009BE133 /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultRepository.swift; sourceTree = "<group>"; };
 		C77BF5AA2A8669CE0077DFB7 /* TMDBMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +197,32 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		C72F2A972A98F516009BE133 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				C72F2A9A2A98FF0F009BE133 /* IntroPage */,
+				C72F2A982A98F52B009BE133 /* IntroPageController.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		C72F2A9A2A98FF0F009BE133 /* IntroPage */ = {
+			isa = PBXGroup;
+			children = (
+				C72F2A9B2A999E03009BE133 /* FirstPageViewController.swift */,
+				C72F2A9D2A999E0D009BE133 /* SecondPageViewController.swift */,
+			);
+			path = IntroPage;
+			sourceTree = "<group>";
+		};
+		C72F2A9F2A99DF29009BE133 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				C72F2AA02A99DF3A009BE133 /* UserDefaultRepository.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		C77BF5A12A8669CE0077DFB7 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +242,8 @@
 		C77BF5AC2A8669CE0077DFB7 /* TMDBMedia */ = {
 			isa = PBXGroup;
 			children = (
+				C72F2A9F2A99DF29009BE133 /* UserDefaults */,
+				C72F2A972A98F516009BE133 /* Intro */,
 				C72F2A742A95D7E7009BE133 /* Map */,
 				C72F29D82A887C6B009BE133 /* App */,
 				C72F29D52A8877DC009BE133 /* Manager */,
@@ -331,6 +367,8 @@
 			files = (
 				C77BF5C72A8674910077DFB7 /* TrendListCollectionViewCell.swift in Sources */,
 				C72F2A0F2A8E3D36009BE133 /* TVSeriesViewController.swift in Sources */,
+				C72F2A9C2A999E03009BE133 /* FirstPageViewController.swift in Sources */,
+				C72F2A992A98F52B009BE133 /* IntroPageController.swift in Sources */,
 				C77BF5C22A8673F10077DFB7 /* TrendListViewController.swift in Sources */,
 				C72F29C42A8771FE009BE133 /* DetailMovie.swift in Sources */,
 				C72F29BE2A8733E1009BE133 /* UIImageView+.swift in Sources */,
@@ -342,8 +380,10 @@
 				C72F29BC2A872856009BE133 /* Movie.swift in Sources */,
 				C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */,
 				C72F2A162A8E46EE009BE133 /* ReusableIdentifier.swift in Sources */,
+				C72F2A9E2A999E0D009BE133 /* SecondPageViewController.swift in Sources */,
 				C72F2A1E2A8E5CC2009BE133 /* TVSeriesDetailSeasonCollectionViewCell.swift in Sources */,
 				C72F29D12A87E920009BE133 /* CastTableViewCell.swift in Sources */,
+				C72F2AA12A99DF3A009BE133 /* UserDefaultRepository.swift in Sources */,
 				C72F29CC2A878F5B009BE133 /* OverViewTableViewCell.swift in Sources */,
 				C77BF5B02A8669CE0077DFB7 /* SceneDelegate.swift in Sources */,
 				C72F2A132A8E40EA009BE133 /* TVSeriesHeaderUICollectionReusableView.swift in Sources */,
@@ -499,9 +539,9 @@
 				DEVELOPMENT_TEAM = SBAHW5F54N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TMDBMedia/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 수집합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -529,9 +569,9 @@
 				DEVELOPMENT_TEAM = SBAHW5F54N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TMDBMedia/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 수집합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
