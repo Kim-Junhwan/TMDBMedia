@@ -9,31 +9,22 @@ import UIKit
 import Alamofire
 
 class DetailViewController: UIViewController {
-    @IBOutlet weak var headerView: UIView!
+    
+    let detailView: DetailView = DetailView()
     
     var movie: Movie?
     var detailMovie: DetailMovie?
     
-    @IBOutlet weak var movieTitleLabel: UILabel!
-    @IBOutlet weak var movieThumbnailImageView: UIImageView!
-    @IBOutlet weak var backdropImageView: UIImageView!
+    override func loadView() {
+        view = detailView
+    }
     
-    
-    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         getDetailMovie()
-        setHeaderView()
         title = "출연/제작"
-    }
-    
-    func setHeaderView() {
-        guard let movie else { return }
-        movieTitleLabel.text = movie.title
-        movieTitleLabel.adjustsFontSizeToFitWidth = true
-        movieThumbnailImageView.getImageFromUrl(posterPath: movie.poster_path)
-        backdropImageView.getImageFromUrl(posterPath: movie.backdrop_path)
+        detailView.setHeaderView(movie: movie!)
     }
     
     func getDetailMovie() {
@@ -47,7 +38,7 @@ class DetailViewController: UIViewController {
                 do {
                     let decodeData = try JSONDecoder().decode(DetailMovie.self, from: data)
                     self.detailMovie = decodeData
-                    self.tableView.reloadData()
+                    self.detailView.tableView.reloadData()
                 } catch {
                     print(error)
                 }
@@ -58,10 +49,10 @@ class DetailViewController: UIViewController {
     }
 
     func setTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: OverViewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OverViewTableViewCell.identifier)
-        tableView.register(UINib(nibName: CastTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CastTableViewCell.identifier)
+        detailView.tableView.dataSource = self
+        detailView.tableView.delegate = self
+        detailView.tableView.register(UINib(nibName: OverViewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OverViewTableViewCell.identifier)
+        detailView.tableView.register(UINib(nibName: CastTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CastTableViewCell.identifier)
     }
     
 }

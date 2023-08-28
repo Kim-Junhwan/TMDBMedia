@@ -8,50 +8,43 @@
 import UIKit
 import Alamofire
 
-class TrendListViewController: UIViewController {
+class TrendListViewController: BaseViewController {
     
-    private enum Metric {
-        static let defaultInset: CGFloat = 20.0
-    }
+    let trendListView = TrendListView()
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    
     var movieList: MovieList = MovieList(results: [])
+    
+    override func loadView() {
+        view = trendListView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCollectionView()
-        fetchMovieList()
-        setNavigationBackButton()
         navigationController?.navigationBar.tintColor = .black
     }
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        setCollectionViewFlowlayout()
-    }
-
-    private func setCollectionView() {
-        collectionView.register(UINib(nibName: TrendListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: TrendListCollectionViewCell.identifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
+    override func viewDidLayoutSubviews() {
+        trendListView.setCollectionViewFlowlayout(numberOfLines: 1, inset: 20)
     }
     
-    private func setCollectionViewFlowlayout() {
-        let flowLayout = UICollectionViewFlowLayout()
-        guard let windowWidth = view.window?.windowScene?.screen.bounds.width else { return }
-        let width = windowWidth - (Metric.defaultInset * 2)
-        flowLayout.itemSize = CGSize(width: width, height: width )
-        flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        flowLayout.minimumLineSpacing = Metric.defaultInset
-        collectionView.collectionViewLayout = flowLayout
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchMovieList()
+    }
+    
+    override func configureView() {
+        super.configureView()
+        setNavigationBackButton()
+        trendListView.collectionView.delegate = self
+        trendListView.collectionView.dataSource = self
     }
     
     func fetchMovieList() {
-        AF.request("https://api.themoviedb.org/3/trending/movie/day?api_key=\(APIKey.tmdsAPIKey)&language=ko-KR").responseDecodable(of: MovieList.self) { response in
+        AF.request("https://api.themoviedb.org/3/trending/movie/day?api_key=\(APIKey.tmdsAPIKey)&language=ko-KR").responseDecodable(of: MovieList.self) { [weak self] response in
             guard let fetchList = response.value else { return }
-                    self.movieList = fetchList
-            self.collectionView.reloadData()
+            self?.movieList = fetchList
+            self?.trendListView.collectionView.reloadData()
         }
     }
     
@@ -76,7 +69,7 @@ extension TrendListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+        let detailViewController = DetailViewController()
         detailViewController.movie = movieList.getMovieForIndex(index: indexPath.row)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
