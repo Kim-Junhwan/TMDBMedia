@@ -61,3 +61,11 @@ AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKe
   
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-08-27 at 12 00 26](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/62df6b10-fe22-41a0-af6b-5e900de5258c)
 
+## 새싹 31회차 과제
+
+- 프로필 설정화면 구현
+
+클로저를 이용한 데이터 전달을 활용하여 이전 화면에 데이터 전달기능 구현
+
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-30 at 19 05 42](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/214eb1ec-cf19-4c91-ac27-b99416cc6135)
+
