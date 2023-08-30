@@ -109,11 +109,11 @@
             </objects>
             <point key="canvasLocation" x="2495.419847328244" y="-35.211267605633807"/>
         </scene>
-        <!--Item-->
+        <!--TrendList-->
         <scene sceneID="eWQ-fs-rMP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3N0-cs-Z4d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZEz-LI-Pwp"/>
+                    <tabBarItem key="tabBarItem" title="TrendList" image="list.bullet" catalog="system" id="ZEz-LI-Pwp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yKM-gj-kdm">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -142,6 +142,7 @@
                         <segue destination="3N0-cs-Z4d" kind="relationship" relationship="viewControllers" id="R7k-iQ-q7F"/>
                         <segue destination="4Cg-ZD-gEg" kind="relationship" relationship="viewControllers" id="Otz-QG-qLJ"/>
                         <segue destination="RJG-xP-6yd" kind="relationship" relationship="viewControllers" id="Abf-vG-W5r"/>
+                        <segue destination="bJp-Em-7xJ" kind="relationship" relationship="viewControllers" id="8Gq-g6-0GK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwx-Qg-hgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,11 +196,11 @@
             </objects>
             <point key="canvasLocation" x="2028.2442748091603" y="650"/>
         </scene>
-        <!--Item-->
+        <!--TVSeries-->
         <scene sceneID="fDW-Px-LnF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Cg-ZD-gEg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fms-iw-yQo"/>
+                    <tabBarItem key="tabBarItem" title="TVSeries" image="tv.fill" catalog="system" id="fms-iw-yQo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJj-1p-Eef">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -230,11 +231,11 @@
             </objects>
             <point key="canvasLocation" x="2028.2442748091603" y="1387.323943661972"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="mr7-zy-33k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RJG-xP-6yd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="owA-pJ-grs"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="owA-pJ-grs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vj3-hS-HIs">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -249,10 +250,49 @@
             </objects>
             <point key="canvasLocation" x="1101.5267175572519" y="1387.323943661972"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="lk5-LR-Xd5">
+            <objects>
+                <viewController id="mh9-er-hwW" customClass="ProfileViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9bA-B8-drF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KsW-ou-lMw"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="317-dJ-KT5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wR8-9X-k2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2026.7175572519084" y="2041.549295774648"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="EgU-z7-Bek">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bJp-Em-7xJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="dNc-gW-12U"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6WS-0l-2pL">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mh9-er-hwW" kind="relationship" relationship="rootViewController" id="ceU-Sf-8ms"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="786-HG-tqF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="2041.549295774648"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="tv.fill" catalog="system" width="128" height="95"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
