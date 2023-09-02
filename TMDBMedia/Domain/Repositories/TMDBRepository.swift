@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TrendRepository {
+protocol TMDBRepository {
     func fetchTrendList(page: Int ,completion: @escaping (Result<TrendPage, Error>) -> Void)
 }
