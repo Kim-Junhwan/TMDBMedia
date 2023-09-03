@@ -15,6 +15,12 @@ struct TrendPage {
     enum CodingKeys: String, CodingKey {
         case mediaList = "results"
     }
+    
+    init() {
+        self.page = 0
+        self.totalPage = 0
+        self.mediaList = []
+    }
 }
 
 struct Media: Identifiable {
