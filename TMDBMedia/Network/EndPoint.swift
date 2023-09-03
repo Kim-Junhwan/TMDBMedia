@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum EndpointError: Error {
-    case url
-}
-
 enum HTTPMethodType: String {
     case GET
     case POST
@@ -22,28 +18,26 @@ struct EndPoint {
     
     let path: String
     let method: HTTPMethodType
-    let networkConfig: NetworkConfiguration
     
-    init(path: String, method: HTTPMethodType, networkConfig: NetworkConfiguration) {
+    init(path: String, method: HTTPMethodType) {
         self.path = path
         self.method = method
-        self.networkConfig = networkConfig
     }
     
-    private func makeURL(query: [String:String]) throws -> URL {
+    private func makeURL(query: [String:String], networkConfig: NetworkConfiguration) throws -> URL {
         let baseURL = networkConfig.baseURL.absoluteString.last != "/" ? networkConfig.baseURL.absoluteString.appending("/") : networkConfig.baseURL.absoluteString
         let endpoint = baseURL.appending(path)
-        guard var urlComponents = URLComponents(string: endpoint) else { throw EndpointError.url }
+        guard var urlComponents = URLComponents(string: endpoint) else { throw NetworkError.url }
         var queryItems: [URLQueryItem] = []
         queryItems += networkConfig.queryParameter.map { URLQueryItem(name: $0.key, value: $0.value) }
         queryItems += query.map { URLQueryItem(name: $0.key, value: $0.value) }
         urlComponents.queryItems = queryItems
-        guard let url = urlComponents.url else { throw EndpointError.url }
+        guard let url = urlComponents.url else { throw NetworkError.url }
         return url
     }
     
-    func makeURLRequest(query: [String:String] = [:], body: [String:String] = [:]) throws -> URLRequest {
-        let url = try self.makeURL(query: query)
+    func makeURLRequest(networkConfig: NetworkConfiguration ,query: [String:String] = [:], body: [String:String] = [:]) throws -> URLRequest {
+        let url = try self.makeURL(query: query, networkConfig: networkConfig)
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = networkConfig.header
