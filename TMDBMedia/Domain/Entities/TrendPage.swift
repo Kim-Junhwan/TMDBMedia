@@ -9,7 +9,7 @@ import Foundation
 
 struct TrendPage {
     let page: Int
-    let totalPage: Int
+    let totalPages: Int
     let mediaList: [Media]
     
     enum CodingKeys: String, CodingKey {
@@ -18,13 +18,20 @@ struct TrendPage {
     
     init() {
         self.page = 0
-        self.totalPage = 0
+        self.totalPages = 0
         self.mediaList = []
     }
+    
+    init(page: Int, totalPages: Int, mediaList: [Media]) {
+        self.page = page
+        self.totalPages = totalPages
+        self.mediaList = mediaList
+    }
+    
 }
 
 struct Media: Identifiable {
-    enum MediaType {
+    enum MediaType: String {
         case movie
         case tv
     }
@@ -32,16 +39,16 @@ struct Media: Identifiable {
     let id: Int
     
     let title: String
-    let original_title: String
+    let originalTitle: String
     
     let mediaType: MediaType
     
-    let poster_path: String
-    let backdrop_path: String
+    let posterPath: String
+    let backdropPath: String
     
-    let vote_count: Int
-    let original_language: String
+    let voteCount: Int
+    let originalLanguage: String
     let overview: String
-    let release_date: String
+    let releaseDate: String
     
 }
