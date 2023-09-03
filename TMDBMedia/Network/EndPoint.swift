@@ -14,16 +14,12 @@ enum HTTPMethodType: String {
     case DELETE
 }
 
-struct EndPoint {
-    
-    let path: String
-    let method: HTTPMethodType
-    
-    init(path: String, method: HTTPMethodType) {
-        self.path = path
-        self.method = method
-    }
-    
+protocol Requestable {
+    var path: String { get }
+    var method: HTTPMethodType { get }
+}
+
+extension Requestable {
     private func makeURL(query: [String:String], networkConfig: NetworkConfiguration) throws -> URL {
         let baseURL = networkConfig.baseURL.absoluteString.last != "/" ? networkConfig.baseURL.absoluteString.appending("/") : networkConfig.baseURL.absoluteString
         let endpoint = baseURL.appending(path)
@@ -45,5 +41,40 @@ struct EndPoint {
             request.httpBody = try JSONSerialization.data(withJSONObject: body)
         }
         return request
+    }
+}
+
+protocol Responsable {
+    associatedtype responseType
+    
+    var decoder: ResponseDecoder { get }
+}
+
+protocol ResponseDecoder {
+    func decode<T: Decodable>(data: Data) throws -> T
+}
+
+class JSONResponseDecoder: ResponseDecoder {
+    private let decoder = JSONDecoder()
+    
+    func decode<T: Decodable>(data: Data) throws -> T {
+        return try decoder.decode(T.self, from: data)
+    }
+}
+
+protocol Networable: Requestable, Responsable {}
+
+struct EndPoint<T>: Networable {
+    
+    typealias responseType = T
+    
+    let path: String
+    let method: HTTPMethodType
+    let decoder: ResponseDecoder
+    
+    init(path: String, method: HTTPMethodType) {
+        self.path = path
+        self.method = method
+        self.decoder = JSONResponseDecoder()
     }
 }
