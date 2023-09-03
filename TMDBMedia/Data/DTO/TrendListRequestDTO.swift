@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct TrendListRequestDTO {
+    let page: Int
+}
