@@ -41,7 +41,7 @@ extension DefaultNetworkService: NetworkService {
                 } else {
                     completion(.success(data))
                 }
-            }
+            }.resume()
         } catch {
             completion(.failure(.url))
         }
