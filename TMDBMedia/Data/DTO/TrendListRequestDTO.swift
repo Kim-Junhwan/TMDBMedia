@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct TrendListRequestDTO {
+struct TrendListRequestDTO: Encodable {
     let page: Int
 }
