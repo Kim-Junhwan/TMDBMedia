@@ -34,13 +34,13 @@ class TrendListCollectionViewCell: UICollectionViewCell {
         clipsToBounds = false
     }
     
-    func configureCell(movie: Movie) {
-        releaseDateLabel.text = movie.release_date
-        ratingLabel.text = String(movie.vote_count)
-        titleLabel.text = movie.title
-        languageLabel.text = movie.original_language
-        thumbnailImageView.getImageFromUrl(posterPath: movie.poster_path)
-        originNameLabel.text = movie.original_title
+    func configureCell(media: Media) {
+        titleLabel.text = media.title
+        ratingLabel.text = "\(media.voteCount)"
+        releaseDateLabel.text = media.releaseDate
+        originNameLabel.text = media.originalTitle
+        languageLabel.text = media.originalLanguage
+        thumbnailImageView.getImageFromUrl(posterPath: media.posterPath)
     }
 
 }
