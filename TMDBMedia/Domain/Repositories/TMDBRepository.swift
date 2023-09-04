@@ -10,4 +10,5 @@ import Foundation
 protocol TMDBRepository {
     func fetchTrendList(page: Int ,completion: @escaping (Result<TrendPage, Error>) -> Void)
     func fetchDetailMedia(id: Int ,completion: @escaping (Result<DetailMedia, Error>) -> Void)
+    func fetchTVSeriesList(page: Int, completion: @escaping (Result<TVSeriesPage, Error>) -> Void)
 }
