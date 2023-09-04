@@ -37,11 +37,11 @@ class DetailView: BaseView {
         }
     }
     
-    func setHeaderView(movie: Movie) {
-        headerView.movieLabel.text = movie.title
+    func setHeaderView(media: Media) {
+        headerView.movieLabel.text = media.title
         headerView.movieLabel.adjustsFontSizeToFitWidth = true
-        headerView.backgroundImageView.getImageFromUrl(posterPath: movie.backdrop_path)
-        headerView.posterImageView.getImageFromUrl(posterPath: movie.poster_path)
+        headerView.backgroundImageView.getImageFromUrl(posterPath: media.posterPath)
+        headerView.posterImageView.getImageFromUrl(posterPath: media.posterPath)
     }
     
 }

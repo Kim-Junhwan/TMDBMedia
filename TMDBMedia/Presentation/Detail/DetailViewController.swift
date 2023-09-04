@@ -12,8 +12,9 @@ class DetailViewController: UIViewController {
     
     let detailView: DetailView = DetailView()
     
-    var movie: Movie?
-    var detailMovie: DetailMovie?
+    var media: Media?
+    var detailMedia: DetailMedia = DetailMedia(cast: [])
+    var repository: TMDBRepository?
     
     override func loadView() {
         view = detailView
@@ -24,28 +25,23 @@ class DetailViewController: UIViewController {
         setTableView()
         getDetailMovie()
         title = "출연/제작"
-        detailView.setHeaderView(movie: movie!)
+        detailView.setHeaderView(media: media!)
+        getDetailMovie()
     }
     
     func getDetailMovie() {
-        guard let movie else { return }
-        let url = "https://api.themoviedb.org/3/movie/\(movie.id)/credits?api_key=\(APIKey.tmdsAPIKey)"
-        AF.request(url).response { response in
-            
-            switch response.result {
-            case .success(let data):
-                guard let data else { return }
-                do {
-                    let decodeData = try JSONDecoder().decode(DetailMovie.self, from: data)
-                    self.detailMovie = decodeData
-                    self.detailView.tableView.reloadData()
-                } catch {
-                    print(error)
+        guard let mediaId = media?.id else { return }
+        repository?.fetchDetailMedia(id: mediaId, completion: { [weak self] result in
+            switch result {
+            case .success(let detailMedia):
+                self?.detailMedia = detailMedia
+                DispatchQueue.main.async {
+                    self?.detailView.tableView.reloadData()
                 }
             case .failure(let error):
                 print(error)
             }
-        }
+        })
     }
 
     func setTableView() {
@@ -82,18 +78,18 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        return detailMovie?.cast.count ?? 0
+        return detailMedia.cast.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverViewTableViewCell.identifier) as? OverViewTableViewCell else { return UITableViewCell() }
-            cell.overViewLabel.text = movie?.overview
+            cell.overViewLabel.text = media?.overview
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell, let detailMovie else { return UITableViewCell() }
-            cell.configureCell(actor: detailMovie.cast[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else { return UITableViewCell() }
+            cell.configureCell(actor: detailMedia.cast[indexPath.row])
             return cell
         }
     }

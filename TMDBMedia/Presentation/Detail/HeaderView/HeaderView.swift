@@ -11,7 +11,8 @@ import UIKit
 class HeaderView: BaseView {
     let backgroundImageView: UIImageView = {
        let imageView = UIImageView()
-        
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     

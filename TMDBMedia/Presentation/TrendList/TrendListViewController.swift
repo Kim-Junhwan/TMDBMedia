@@ -99,7 +99,8 @@ extension TrendListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
-        //detailViewController.movie = movieList.getMovieForIndex(index: indexPath.row)
+        detailViewController.repository = repository
+        detailViewController.media = trendList[indexPath.row]
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
