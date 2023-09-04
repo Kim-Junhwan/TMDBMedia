@@ -20,6 +20,7 @@ class TrendListViewController: BaseViewController {
             hasNextPage ? currentPage+1 : currentPage
         }
     }
+    var isFetching: Bool = false
     
     let repository: TMDBRepository
     
@@ -60,6 +61,7 @@ class TrendListViewController: BaseViewController {
     }
     
     func fetchTrendList() {
+        isFetching = true
         repository.fetchTrendList(page: nextPage) { [weak self] result in
             switch result {
             case .success(let trendPage):
@@ -72,6 +74,7 @@ class TrendListViewController: BaseViewController {
             case .failure(let error):
                 print(error)
             }
+            self?.isFetching = false
         }
     }
     
@@ -99,7 +102,12 @@ extension TrendListViewController: UICollectionViewDelegate, UICollectionViewDat
         //detailViewController.movie = movieList.getMovieForIndex(index: indexPath.row)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-    
-    
-    
+}
+
+extension TrendListViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >=  (scrollView.contentSize.height-(scrollView.frame.height-tabBarController!.tabBar.frame.height)) && !isFetching{
+            fetchTrendList()
+        }
+    }
 }
