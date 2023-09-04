@@ -52,7 +52,7 @@ struct TrendDTO: Codable {
         switch mediaType {
         case .movie:
             title = self.title ?? ""
-            releaseDate = self.original_title ?? ""
+            releaseDate = self.release_date ?? ""
             originalTitle = self.original_title ?? ""
         case .tv:
             title = self.name ?? ""
