@@ -17,23 +17,25 @@ enum HTTPMethodType: String {
 protocol Requestable {
     var path: String { get }
     var method: HTTPMethodType { get }
+    var queryParameter: Encodable? { get }
 }
 
 extension Requestable {
-    private func makeURL(query: [String:String], networkConfig: NetworkConfiguration) throws -> URL {
+    private func makeURL(networkConfig: NetworkConfiguration) throws -> URL {
         let baseURL = networkConfig.baseURL.absoluteString.last != "/" ? networkConfig.baseURL.absoluteString.appending("/") : networkConfig.baseURL.absoluteString
         let endpoint = baseURL.appending(path)
         guard var urlComponents = URLComponents(string: endpoint) else { throw NetworkError.url }
         var queryItems: [URLQueryItem] = []
         queryItems += networkConfig.queryParameter.map { URLQueryItem(name: $0.key, value: $0.value) }
-        queryItems += query.map { URLQueryItem(name: $0.key, value: $0.value) }
+        let query = try queryParameter?.toQuery() ?? [:]
+        queryItems += query.map { URLQueryItem(name: $0.key, value: String(describing: $0.value)) }
         urlComponents.queryItems = queryItems
         guard let url = urlComponents.url else { throw NetworkError.url }
         return url
     }
     
-    func makeURLRequest(networkConfig: NetworkConfiguration ,query: [String:String] = [:], body: [String:String] = [:]) throws -> URLRequest {
-        let url = try self.makeURL(query: query, networkConfig: networkConfig)
+    func makeURLRequest(networkConfig: NetworkConfiguration , body: [String:String] = [:]) throws -> URLRequest {
+        let url = try self.makeURL(networkConfig: networkConfig)
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = networkConfig.header
@@ -62,6 +64,14 @@ class JSONResponseDecoder: ResponseDecoder {
     }
 }
 
+extension Encodable {
+    func toQuery() throws -> [String: Any]? {
+        let data = try JSONEncoder().encode(self)
+        let json = try JSONSerialization.jsonObject(with: data)
+        return json as? [String:Any]
+    }
+}
+
 protocol Networable: Requestable, Responsable {}
 
 struct EndPoint<T>: Networable {
@@ -71,10 +81,12 @@ struct EndPoint<T>: Networable {
     let path: String
     let method: HTTPMethodType
     let decoder: ResponseDecoder
+    let queryParameter: Encodable?
     
-    init(path: String, method: HTTPMethodType) {
+    init(path: String, method: HTTPMethodType, query: Encodable?) {
         self.path = path
         self.method = method
+        self.queryParameter = query
         self.decoder = JSONResponseDecoder()
     }
 }
