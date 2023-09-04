@@ -28,4 +28,16 @@ extension DefaultTMDBRepository: TMDBRepository {
             }
         }
     }
+    
+    func fetchDetailMedia(id: Int, completion: @escaping (Result<DetailMedia, Error>) -> Void) {
+        let endpoint = APIEndpoints.fetchDetailMedia(detailReqeustDTO: .init(id: id))
+        dataTransferService.request(endpoint: endpoint) { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data.toDomain()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
