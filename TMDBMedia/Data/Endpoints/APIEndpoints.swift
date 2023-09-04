@@ -15,4 +15,12 @@ struct APIEndpoints {
     static func fetchDetailMedia(detailReqeustDTO: DetailMediaRequestDTO) -> EndPoint<DetailMediaResponseDTO> {
         return EndPoint(path: "3/movie/\(detailReqeustDTO.id)/credits", method: .GET, query: nil)
     }
+    
+    static func fetchTVSeriesList(tvseriesListRequestDTO: TVSeriesListRequestDTO) -> EndPoint<TVSeriesListResponseDTO> {
+        return EndPoint(path: "3/tv/top_rated", method: .GET, query: tvseriesListRequestDTO)
+    }
+    
+    static func fetchTVSeriesSeason(tvSeriesSeasonsRequestDTO: TVseriesSeasonsRequestDTO) -> EndPoint<TVSeriesSeasonListResponseDTO> {
+        return EndPoint(path: "3/tv/\(tvSeriesSeasonsRequestDTO.id)", method: .GET, query: nil)
+    }
 }
