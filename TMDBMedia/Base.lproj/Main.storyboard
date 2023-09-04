@@ -12,7 +12,7 @@
         <!--Trend List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TrendListViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrnedList" id="BYZ-38-t0r" customClass="TrendListViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,41 +109,16 @@
             </objects>
             <point key="canvasLocation" x="2495.419847328244" y="-35.211267605633807"/>
         </scene>
-        <!--TrendList-->
-        <scene sceneID="eWQ-fs-rMP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3N0-cs-Z4d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TrendList" image="list.bullet" catalog="system" id="ZEz-LI-Pwp"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yKM-gj-kdm">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="be3-QS-nb9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMr-WQ-8MX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
-        </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="CwJ-pF-dHG">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" automaticallyAdjustsScrollViewInsets="NO" id="S45-BB-S04" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" automaticallyAdjustsScrollViewInsets="NO" id="S45-BB-S04" customClass="TMDBTabBarViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ba-BF-q8U">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="3N0-cs-Z4d" kind="relationship" relationship="viewControllers" id="R7k-iQ-q7F"/>
-                        <segue destination="4Cg-ZD-gEg" kind="relationship" relationship="viewControllers" id="Otz-QG-qLJ"/>
-                        <segue destination="RJG-xP-6yd" kind="relationship" relationship="viewControllers" id="Abf-vG-W5r"/>
-                        <segue destination="bJp-Em-7xJ" kind="relationship" relationship="viewControllers" id="8Gq-g6-0GK"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwx-Qg-hgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,13 +127,13 @@
         <!--Series View Controller-->
         <scene sceneID="cez-bN-4vj">
             <objects>
-                <viewController id="VsV-Dg-C2S" customClass="TVSeriesViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TVSeries" id="VsV-Dg-C2S" customClass="TVSeriesViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="76I-AL-CMQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KDD-zc-DhC">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lr1-sg-gg2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -188,37 +163,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AFW-Nq-ld8"/>
-                    <connections>
-                        <outlet property="collectionView" destination="KDD-zc-DhC" id="g1t-EQ-XCz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sp-pC-vH6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2028.2442748091603" y="650"/>
         </scene>
-        <!--TVSeries-->
-        <scene sceneID="fDW-Px-LnF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Cg-ZD-gEg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TVSeries" image="tv.fill" catalog="system" id="fms-iw-yQo"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJj-1p-Eef">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="VsV-Dg-C2S" kind="relationship" relationship="rootViewController" id="JVz-Rp-n03"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CL5-1w-cZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1101.5267175572519" y="650"/>
-        </scene>
         <!--Map View Controller-->
         <scene sceneID="gmU-HG-UXk">
             <objects>
-                <viewController id="H5x-Sj-Dsx" customClass="MapViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapView" id="H5x-Sj-Dsx" customClass="MapViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PZf-K1-nmD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,29 +184,10 @@
             </objects>
             <point key="canvasLocation" x="2028.2442748091603" y="1387.323943661972"/>
         </scene>
-        <!--Map-->
-        <scene sceneID="mr7-zy-33k">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RJG-xP-6yd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="owA-pJ-grs"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vj3-hS-HIs">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="H5x-Sj-Dsx" kind="relationship" relationship="rootViewController" id="YIt-al-e5B"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lyc-Hz-Env" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1101.5267175572519" y="1387.323943661972"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="lk5-LR-Xd5">
             <objects>
-                <viewController id="mh9-er-hwW" customClass="ProfileViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileView" id="mh9-er-hwW" customClass="ProfileViewController" customModule="TMDBMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bA-B8-drF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,12 +221,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="tv.fill" catalog="system" width="128" height="95"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
