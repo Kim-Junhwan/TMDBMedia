@@ -9,8 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    let appDIContainer = AppDIContainer()
+    lazy var sceneDIContainer = SceneDIContainer(appDIContainer: appDIContainer)
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -18,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let presentViewController: UIViewController
         if UserDefaultRepository.isLaunched {
-            presentViewController = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+            presentViewController = sceneDIContainer.makeTabBarController()
         } else {
             presentViewController = IntroPageController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         }
