@@ -23,12 +23,15 @@ final class SceneDIContainer {
     }
     
     func makeTrendListViewController() -> TrendListViewController {
-        return TrendListViewController(repository: appDIContainer.tmdbRepository)
+        let vc = TrendListViewController(repository: appDIContainer.tmdbRepository)
+        vc.tabBarItem = .init(title: "Trend List", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
+        return vc
     }
     
     func makeTVSeriesViewController() -> TVSeriesViewController {
         let tv = TVSeriesViewController()
         tv.repository = appDIContainer.tmdbRepository
+        tv.tabBarItem = .init(title: "TVSeries", image: UIImage(systemName: "tv"), selectedImage: UIImage(systemName: "tv"))
         return tv
     }
 }
