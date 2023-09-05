@@ -9,7 +9,7 @@ import Foundation
 
 struct APIEndpoints {
     static func fetchTrendList(trendListRequestDTO: TrendListRequestDTO) -> EndPoint<TrendListResponseDTO> {
-        return EndPoint(path: "/3/trending/all/day", method: .GET, query: trendListRequestDTO)
+        return EndPoint(path: "3/trending/all/day", method: .GET, query: trendListRequestDTO)
     }
     
     static func fetchDetailMedia(detailReqeustDTO: DetailMediaRequestDTO) -> EndPoint<DetailMediaResponseDTO> {
@@ -22,5 +22,9 @@ struct APIEndpoints {
     
     static func fetchTVSeriesSeason(tvSeriesSeasonsRequestDTO: TVseriesSeasonsRequestDTO) -> EndPoint<TVSeriesSeasonListResponseDTO> {
         return EndPoint(path: "3/tv/\(tvSeriesSeasonsRequestDTO.id)", method: .GET, query: nil)
+    }
+    
+    static func fetchTvSeriesSeasonEpsode(tvSeriesSeasonEpsode: TVSeriesSeasonEpsodeRequestDTO) -> EndPoint<TVSeriesSeasonEpsodeResponseDTO> {
+        return EndPoint(path: "3/tv/\(tvSeriesSeasonEpsode.tvSeriesId)/season/\(tvSeriesSeasonEpsode.seasonNumber)", method: .GET, query: nil)
     }
 }
