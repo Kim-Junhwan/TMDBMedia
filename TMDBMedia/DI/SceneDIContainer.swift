@@ -18,7 +18,7 @@ final class SceneDIContainer {
     
     func makeTabBarController() -> TMDBTabBarViewController {
         let tabBar = TMDBTabBarViewController()
-        tabBar.setViewControllers([makeTrendListViewController(), makeTVSeriesViewController()], animated: true)
+        tabBar.setViewControllers([makeTrendListViewController(), makeTVSeriesViewController(), makeMapViewController(), makeProfilieViewController()], animated: true)
         return tabBar
     }
     
@@ -29,9 +29,20 @@ final class SceneDIContainer {
     }
     
     func makeTVSeriesViewController() -> TVSeriesViewController {
-        let tv = TVSeriesViewController()
-        tv.repository = appDIContainer.tmdbRepository
+        let tv = TVSeriesViewController(repository: appDIContainer.tmdbRepository)
         tv.tabBarItem = .init(title: "TVSeries", image: UIImage(systemName: "tv"), selectedImage: UIImage(systemName: "tv"))
         return tv
+    }
+    
+    func makeMapViewController() -> MapViewController {
+        let mapView = MapViewController()
+        mapView.tabBarItem = .init(title: "Map", image: UIImage(systemName: "map.fill"), selectedImage: UIImage(systemName: "map.fill"))
+        return mapView
+    }
+    
+    func makeProfilieViewController() -> ProfileViewController {
+        let profileView = ProfileViewController()
+        profileView.tabBarItem = .init(title: "Profile", image: UIImage(systemName: "person.fill"), selectedImage: UIImage(systemName: "person.fill"))
+        return profileView
     }
 }

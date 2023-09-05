@@ -40,7 +40,6 @@
 		C72F2B312A9E0C8F009BE133 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2B302A9E0C8F009BE133 /* ProfileViewController.swift */; };
 		C72F2B332A9E10A2009BE133 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2B322A9E10A2009BE133 /* ProfileView.swift */; };
 		C72F2B352A9E14C3009BE133 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2B342A9E14C3009BE133 /* ProfileTableViewCell.swift */; };
-		C72F2B372A9E3054009BE133 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2B362A9E3054009BE133 /* ProfileData.swift */; };
 		C72F2B392A9F2C64009BE133 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F2B382A9F2C64009BE133 /* ProfileSettingViewController.swift */; };
 		C77BF5AE2A8669CE0077DFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */; };
 		C77BF5B02A8669CE0077DFB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BF5AF2A8669CE0077DFB7 /* SceneDelegate.swift */; };
@@ -102,7 +101,6 @@
 		C72F2B302A9E0C8F009BE133 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C72F2B322A9E10A2009BE133 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C72F2B342A9E14C3009BE133 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		C72F2B362A9E3054009BE133 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		C72F2B382A9F2C64009BE133 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		C77BF5AA2A8669CE0077DFB7 /* TMDBMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77BF5AD2A8669CE0077DFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 				C72F2B302A9E0C8F009BE133 /* ProfileViewController.swift */,
 				C72F2B322A9E10A2009BE133 /* ProfileView.swift */,
 				C72F2B342A9E14C3009BE133 /* ProfileTableViewCell.swift */,
-				C72F2B362A9E3054009BE133 /* ProfileData.swift */,
 				C72F2B382A9F2C64009BE133 /* ProfileSettingViewController.swift */,
 			);
 			path = Profile;
@@ -599,7 +596,6 @@
 				C72F2B312A9E0C8F009BE133 /* ProfileViewController.swift in Sources */,
 				C7F4FD162AA5AEDD0076FB30 /* SceneDIContainer.swift in Sources */,
 				C7F4FD062AA4FEE70076FB30 /* AppDIContainer.swift in Sources */,
-				C72F2B372A9E3054009BE133 /* ProfileData.swift in Sources */,
 				C72F2A7B2A9621C9009BE133 /* Theater.swift in Sources */,
 				C72F2AE12A9C7B8E009BE133 /* TrendListView.swift in Sources */,
 				C72F2B392A9F2C64009BE133 /* ProfileSettingViewController.swift in Sources */,

@@ -22,9 +22,15 @@ class MapViewController: UIViewController {
     }()
     lazy var filterBarButton: UIBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(showFilteredTheaterAlert))
     
-    
-    
     let theaterList = TheaterList()
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +40,7 @@ class MapViewController: UIViewController {
         checkDeviceAuthorization()
         setLocationButton()
         showAllTheater()
+        view.backgroundColor = .systemBackground
     }
     
     func setBarButton() {

@@ -14,6 +14,14 @@ class ProfileViewController: BaseViewController {
     let profileMenuList: [String] = ["이름","사용자 이름", "성별", "나이"]
     var defaultUserProfile: [String] = ["고양이","CAT","남","23"]
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = profileView
     }
