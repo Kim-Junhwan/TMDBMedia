@@ -69,3 +69,51 @@ AF.request("https://api.themoviedb.org/3/tv/top_rated?api_key=\(APIKey.tmdsAPIKe
 
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-08-30 at 19 05 42](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/214eb1ec-cf19-4c91-ac27-b99416cc6135)
 
+## 새싹 34회차 과제
+
+- 데이터 타입에 따라 다른 셀 보여주기
+- 반복적인 네트워크작업을 추상화해 계층으로 나누어 각 책임 분리
+
+가져온 타입이 tv일 경우 tv안테나 셀을, movie일 경우 슬레이트셀을 보여준다.
+
+![Simulator Screen Recording - iPhone 14 Pro - 2023-09-05 at 21 17 58](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/dd2c45bd-f2c5-450c-9fec-365a02f96698)
+
+### 네트워크 계층
+
+![image](https://github.com/Kim-Junhwan/TMDBMedia/assets/58679737/33034ecc-081c-4f34-b9de-b79095426c15)
+
+해당 프로젝트에는 총 5개의 API가 사용된다. API를 이용할때마다 같은 코드를 중복작성하게 된다. 중복된 부분을 제거하기 위해 네트워킹 작업을 다음과 같이 분할했다.
+
+- NetworkConfiguration: 기본이 되는 네트워크 설정 객체. API의 기본 URL, header, parameter를 가지고 있음.
+
+```swift
+struct NetworkConfiguration {
+    var baseURL: URL
+    var header: [String:String]
+    var queryParameter: [String:String]
+}
+```
+
+- Endpoint: 세부적인 API의 path와, 해당 API에 들어가야할 query, httpMethod, 응답으로 온 data를 디코딩할 타입을 가지고 있고, 최종적으로 요청할 API URL을 만드는 기능을 가지고 있다.
+
+```swift
+struct EndPoint<T>: Networable {
+    
+    typealias responseType = T
+    
+    let path: String
+    let method: HTTPMethodType
+    let decoder: ResponseDecoder
+    let queryParameter: Encodable?
+    
+    init(path: String, method: HTTPMethodType, query: Encodable?) {
+        self.path = path
+        self.method = method
+        self.queryParameter = query
+        self.decoder = JSONResponseDecoder()
+    }
+}
+```
+
+- NetworkService: URLSession을 이용해 API 네트워킹 작업을 수행한다.
+- DataTransferService: NetworkService로부터 받은 데이터의 값을 Endpoint의 디코딩 타입으로 디코딩을 한다.
