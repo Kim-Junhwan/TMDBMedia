@@ -37,6 +37,17 @@ class SecondPageViewController: UIViewController {
         return imageView
     }()
     
+    let diContainer: SceneDIContainer
+    
+    init(diContainer: SceneDIContainer) {
+        self.diContainer = diContainer
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
@@ -62,8 +73,7 @@ class SecondPageViewController: UIViewController {
     }
     
     @objc func displayMainView() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MainTabBar")
+        let vc = diContainer.makeTabBarController()
         guard let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
         let currentWindow = scene.window
         currentWindow?.rootViewController = vc

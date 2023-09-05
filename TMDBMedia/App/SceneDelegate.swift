@@ -16,12 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let presentViewController: UIViewController
         if UserDefaultRepository.isLaunched {
             presentViewController = sceneDIContainer.makeTabBarController()
         } else {
-            presentViewController = IntroPageController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+            presentViewController = IntroPageController(diContainer: sceneDIContainer)
         }
         window?.rootViewController = presentViewController
         window?.makeKeyAndVisible()

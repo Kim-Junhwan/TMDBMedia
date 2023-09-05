@@ -9,7 +9,17 @@ import UIKit
 
 class IntroPageController: UIPageViewController {
     
-    var pageViewControllerList: [UIViewController] = [FirstPageViewController(), SecondPageViewController()]
+    let diContainer: SceneDIContainer
+    lazy var pageViewControllerList: [UIViewController] = [FirstPageViewController(), SecondPageViewController(diContainer: diContainer)]
+    
+    init(diContainer: SceneDIContainer) {
+        self.diContainer = diContainer
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
