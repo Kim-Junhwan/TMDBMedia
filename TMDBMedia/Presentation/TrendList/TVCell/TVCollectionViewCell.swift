@@ -1,15 +1,14 @@
 //
-//  TrendListCollectionViewCell.swift
+//  TVCollectionViewCell.swift
 //  TMDBMedia
 //
-//  Created by JunHwan Kim on 2023/08/11.
+//  Created by JunHwan Kim on 2023/09/05.
 //
 
 import UIKit
 
-class TrendListCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "TrendListCollectionViewCell"
+class TVCollectionViewCell: UICollectionViewCell {
+    static let identifier = "TVCollectionViewCell"
 
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -42,5 +41,4 @@ class TrendListCollectionViewCell: UICollectionViewCell {
         languageLabel.text = media.originalLanguage
         thumbnailImageView.getImageFromUrl(posterPath: media.posterPath)
     }
-
 }

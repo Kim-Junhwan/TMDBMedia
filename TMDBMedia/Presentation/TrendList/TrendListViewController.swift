@@ -92,9 +92,17 @@ extension TrendListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendListCollectionViewCell.identifier, for: indexPath) as? TrendListCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(media: trendList[indexPath.row])
-        return cell
+        let media = trendList[indexPath.row]        
+        switch media.mediaType {
+        case .movie:
+            guard let movieCell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
+            movieCell.configureCell(media: media)
+            return movieCell
+        case .tv:
+            guard let tvCell = collectionView.dequeueReusableCell(withReuseIdentifier: TVCollectionViewCell.identifier, for: indexPath) as? TVCollectionViewCell else { return UICollectionViewCell() }
+            tvCell.configureCell(media: media)
+            return tvCell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

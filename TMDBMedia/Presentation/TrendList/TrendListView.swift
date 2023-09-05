@@ -15,8 +15,8 @@ class TrendListView: BaseView {
     
     var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
-        collectionView.register(UINib(nibName: TrendListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: TrendListCollectionViewCell.identifier)
-        
+        collectionView.register(UINib(nibName:  MovieCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
+        collectionView.register(UINib(nibName: TVCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: TVCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -34,7 +34,7 @@ class TrendListView: BaseView {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: .zero, right: inset)
         let itemSize = (collectionView.frame.width - (2*inset)) / Double(numberOfLines)
-        flowLayout.itemSize = CGSize(width: itemSize, height: itemSize )
+        flowLayout.itemSize = CGSize(width: itemSize, height: itemSize * 1.3 )
         collectionView.collectionViewLayout = flowLayout
     }
 }

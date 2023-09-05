@@ -12,7 +12,7 @@ class TVSeriesViewController: BaseViewController {
 
     let collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
-        collectionView.register(UINib(nibName: TrendListCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: TrendListCollectionViewCell.identifier)
+        collectionView.register(UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         collectionView.backgroundColor = .black
         return collectionView
     }()
