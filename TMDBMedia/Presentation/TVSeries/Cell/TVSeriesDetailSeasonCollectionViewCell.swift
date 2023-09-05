@@ -17,7 +17,12 @@ class TVSeriesDetailSeasonCollectionViewCell: UICollectionViewCell, ReusableIden
     }
     
     func configureCell(episode: SeasonEpisode) {
-        stillPathimageView.getImageFromUrl(posterPath: episode.stillPath)
+        if let stillPath = episode.stillPath {
+            stillPathimageView.getImageFromUrl(posterPath: stillPath)
+        } else {
+            stillPathimageView.image = UIImage(named: "ready")
+        }
+        
     }
 
 }

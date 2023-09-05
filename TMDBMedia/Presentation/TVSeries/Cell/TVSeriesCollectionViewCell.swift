@@ -12,7 +12,7 @@ class TVSeriesCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
 
     @IBOutlet weak var seasonNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var episodeList: EpisodeList = EpisodeList(episodes: [])
+    var episodeList: SeasonEpisodeList = SeasonEpisodeList(episodes: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,6 @@ class TVSeriesCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
     
     override func updateConstraints() {
         super.updateConstraints()
-        
     }
     
     override func layoutSubviews() {
@@ -39,18 +38,24 @@ class TVSeriesCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
         collectionView.collectionViewLayout = flowLayout
     }
     
-    func configureCell(season: Season, seasonId: Int) {
+    func configureCell(tvSeriesId: Int ,season: TVSeriesSeason, repository: TMDBRepository) {
         seasonNameLabel.text = season.name
-        AF.request("https://api.themoviedb.org/3/tv/\(seasonId)/season/\(season.seasonNumber)?api_key=\(APIKey.tmdsAPIKey)").validate().responseDecodable(of: EpisodeList.self) { response in
-            guard let episodes = response.value else { return }
-            self.episodeList = episodes
-            self.collectionView.reloadData()
+        repository.fetchTVSeriesSeasonEpisode(tvSeriesId: tvSeriesId, seasonNumber: season.seasonNumber) { [weak self] result in
+            switch result {
+            case .success(let success):
+                self?.episodeList = success
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            case .failure(let failure):
+                print(failure)
+            }
         }
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        episodeList = EpisodeList(episodes: [])
+        episodeList = SeasonEpisodeList(episodes: [])
     }
 }
 
@@ -64,7 +69,6 @@ extension TVSeriesCollectionViewCell: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TVSeriesDetailSeasonCollectionViewCell.identifier, for: indexPath) as? TVSeriesDetailSeasonCollectionViewCell else { return TVSeriesCollectionViewCell() }
         cell.configureCell(episode: episodeList.episodes[indexPath.row])
-        
         return cell
     }
     

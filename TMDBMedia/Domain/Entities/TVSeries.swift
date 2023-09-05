@@ -27,8 +27,12 @@ struct TVSeriesSeason {
     let id: Int
 }
 
+struct SeasonEpisodeList{
+    let episodes: [SeasonEpisode]
+}
+
 struct SeasonEpisode {
     let id: Int
     let episodeNum: Int
-    let stillPath: String
+    let stillPath: String?
 }
