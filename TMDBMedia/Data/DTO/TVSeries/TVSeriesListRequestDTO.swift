@@ -14,3 +14,8 @@ struct TVSeriesListRequestDTO: Encodable {
 struct TVseriesSeasonsRequestDTO: Encodable {
     let id: Int
 }
+
+struct TVSeriesSeasonEpsodeRequestDTO: Encodable {
+    let tvSeriesId: Int
+    let seasonNumber: Int
+}

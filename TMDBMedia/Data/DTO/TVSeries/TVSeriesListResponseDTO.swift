@@ -67,12 +67,31 @@ struct SeasonDTO: Decodable {
     }
 }
 
-struct EpisodeList: Decodable {
-    let episodeList: [EpisodeDTO]
+struct TVSeriesSeasonEpsodeResponseDTO: Decodable {
+    let episodeList: [EpisodeDTO]?
+    
+    enum CodingKeys: String, CodingKey {
+        case episodeList = "episodes"
+    }
+    
+    func toDomain() -> SeasonEpisodeList {
+        guard let episodeList = episodeList else { return SeasonEpisodeList(episodes: []) }
+        return .init(episodes: episodeList.map { $0.toDomain() })
+    }
 }
 
 struct EpisodeDTO: Decodable {
     let id: Int
     let episodeNumber: Int
-    let stillPath: String
+    let stillPath: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case stillPath = "still_path"
+        case episodeNumber = "episode_number"
+    }
+    
+    func toDomain() -> SeasonEpisode {
+        return .init(id: id, episodeNum: episodeNumber, stillPath: stillPath)
+    }
 }
